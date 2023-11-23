@@ -1,122 +1,156 @@
 ﻿@page "/birds"
 
-<section class="projects-area">
-    <div class="container">
-        <h1 class="section-heading letter-spacing-5" data-aos="fade-up">
-            <img src="./assets/images/star-2.png" alt="Star">
-            Birds
-            <img src="./assets/images/star-2.png" alt="Star">
-        </h1>
-        <div class="row">
-            <div class="col-md-12">
-                <h1 class="section-heading letter-spacing-5" data-aos="fade-up">
-                    <img src="./assets/images/star-2.png" alt="Star">
-                    Birds
-                    <img src="./assets/images/star-2.png" alt="Star">
-                </h1>
-                @if (_birds is not null)
-                {
-                    var _birds1 = _birds.Take(5);
-                    var _birds2 = _birds.Skip(5).Take(5);
-                    var _birds3 = _birds.Skip(10).Take(5);
-                    var _birds4 = _birds.Skip(15).Take(5);
 
-                    <div class="row-list">
-                        <div class="column-list">
-                            @foreach (var item in _birds1)
-                            {
-                                <div data-aos="zoom-in" class="flex-1">
-                                    <div class="project-item shadow-box">
-                                        <a class="overlay-link" href="./work-details.html"></a>
-                                        <img src="./assets/images/bg1.png" alt="BG" class="bg-img">
-                                        <div class="project-img">
-                                            <img src="@item.ImagePath" alt="Project">
-                                        </div>
-                                        <div class="d-flex align-items-center justify-content-between">
-                                            <div class="project-info">
-                                                <p>@item.BirdEnglishName</p>
-                                                <h1>@item.BirdMyanmarName</h1>
+@if (_enumbirdsDetail == EnumBirdDetail.Disable)
+{
+    <section class="projects-area">
+        <div class="container">
+            <h1 class="section-heading letter-spacing-5" data-aos="fade-up">
+                <img src="./assets/images/star-2.png" alt="Star">
+                Birds
+                <img src="./assets/images/star-2.png" alt="Star">
+            </h1>
+            <div class="row">
+                <div class="col-md-12">
+                    <h1 class="section-heading letter-spacing-5" data-aos="fade-up">
+                        <img src="./assets/images/star-2.png" alt="Star">
+                        Birds
+                        <img src="./assets/images/star-2.png" alt="Star">
+                    </h1>
+                    @if (_birds is not null)
+                    {
+                        var _birds1 = _birds.Take(5);
+                        var _birds2 = _birds.Skip(5).Take(5);
+                        var _birds3 = _birds.Skip(10).Take(5);
+                        var _birds4 = _birds.Skip(15).Take(5);
+
+                        <div class="row-list">
+                            <div class="column-list">
+                                @foreach (var item in _birds1)
+                                {
+                                    <div data-aos="zoom-in" class="flex-1">
+                                        <div class="project-item shadow-box">
+                                            <a class="overlay-link" href="javascript:void(0);" @onclick="()=>Detail(item)"></a>
+                                            <img src="./assets/images/bg1.png" alt="BG" class="bg-img">
+                                            <div class="project-img">
+                                                <img src="@item.ImagePath" alt="Project">
                                             </div>
-                                            <a href="work-details.html" class="project-btn">
-                                                <img src="./assets/images/icon.svg" alt="Button">
-                                            </a>
+                                            <div class="d-flex align-items-center justify-content-between">
+                                                <div class="project-info">
+                                                    <p>@item.BirdEnglishName</p>
+                                                    <h1>@item.BirdMyanmarName</h1>
+                                                </div>
+                                                <a href="work-details.html" class="project-btn">
+                                                    <img src="./assets/images/icon.svg" alt="Button">
+                                                </a>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                            }
-                        </div>
-                        <div class="column-list">
-                            @foreach (var item in _birds2)
-                            {
-                                <div data-aos="zoom-in" class="flex-1">
-                                    <div class="project-item shadow-box">
-                                        <a class="overlay-link" href="./work-details.html"></a>
-                                        <img src="./assets/images/bg1.png" alt="BG" class="bg-img">
-                                        <div class="project-img">
-                                            <img src="@item.ImagePath" alt="Project">
-                                        </div>
-                                        <div class="d-flex align-items-center justify-content-between">
-                                            <div class="project-info">
-                                                <p>@item.BirdEnglishName</p>
-                                                <h1>@item.BirdMyanmarName</h1>
+                                }
+                            </div>
+                            <div class="column-list">
+                                @foreach (var item in _birds2)
+                                {
+                                    <div data-aos="zoom-in" class="flex-1">
+                                        <div class="project-item shadow-box">
+                                            <a class="overlay-link" href="javascript:void(0);" @onclick="()=>Detail(item)"></a>
+                                            <img src="./assets/images/bg1.png" alt="BG" class="bg-img">
+                                            <div class="project-img">
+                                                <img src="@item.ImagePath" alt="Project">
                                             </div>
-                                            <a href="work-details.html" class="project-btn">
-                                                <img src="./assets/images/icon.svg" alt="Button">
-                                            </a>
+                                            <div class="d-flex align-items-center justify-content-between">
+                                                <div class="project-info">
+                                                    <p>@item.BirdEnglishName</p>
+                                                    <h1>@item.BirdMyanmarName</h1>
+                                                </div>
+                                                <a href="work-details.html" class="project-btn">
+                                                    <img src="./assets/images/icon.svg" alt="Button">
+                                                </a>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                            }
-                        </div>
-                        <div class="column-list">
-                            @foreach (var item in _birds3)
-                            {
-                                <div data-aos="zoom-in" class="flex-1">
-                                    <div class="project-item shadow-box">
-                                        <a class="overlay-link" href="./work-details.html"></a>
-                                        <img src="./assets/images/bg1.png" alt="BG" class="bg-img">
-                                        <div class="project-img">
-                                            <img src="@item.ImagePath" alt="Project">
-                                        </div>
-                                        <div class="d-flex align-items-center justify-content-between">
-                                            <div class="project-info">
-                                                <p>@item.BirdEnglishName</p>
-                                                <h1>@item.BirdMyanmarName</h1>
+                                }
+                            </div>
+                            <div class="column-list">
+                                @foreach (var item in _birds3)
+                                {
+                                    <div data-aos="zoom-in" class="flex-1">
+                                        <div class="project-item shadow-box">
+                                            <a class="overlay-link" href="javascript:void(0);" @onclick="()=>Detail(item)"></a>
+                                            <img src="./assets/images/bg1.png" alt="BG" class="bg-img">
+                                            <div class="project-img">
+                                                <img src="@item.ImagePath" alt="Project">
                                             </div>
-                                            <a href="work-details.html" class="project-btn">
-                                                <img src="./assets/images/icon.svg" alt="Button">
-                                            </a>
+                                            <div class="d-flex align-items-center justify-content-between">
+                                                <div class="project-info">
+                                                    <p>@item.BirdEnglishName</p>
+                                                    <h1>@item.BirdMyanmarName</h1>
+                                                </div>
+                                                <a href="work-details.html" class="project-btn">
+                                                    <img src="./assets/images/icon.svg" alt="Button">
+                                                </a>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                            }
-                        </div>
-                        <div class="column-list">
-                            @foreach (var item in _birds4)
-                            {
-                                <div data-aos="zoom-in" class="flex-1">
-                                    <div class="project-item shadow-box">
-                                        <a class="overlay-link" href="./work-details.html"></a>
-                                        <img src="./assets/images/bg1.png" alt="BG" class="bg-img">
-                                        <div class="project-img">
-                                            <img src="@item.ImagePath" alt="Project">
-                                        </div>
-                                        <div class="d-flex align-items-center justify-content-between">
-                                            <div class="project-info">
-                                                <p>@item.BirdEnglishName</p>
-                                                <h1>@item.BirdMyanmarName</h1>
+                                }
+                            </div>
+                            <div class="column-list">
+                                @foreach (var item in _birds4)
+                                {
+                                    <div data-aos="zoom-in" class="flex-1">
+                                        <div class="project-item shadow-box">
+                                            <a class="overlay-link" href="javascript:void(0);" @onclick="()=>Detail(item)"></a>
+                                            <img src="./assets/images/bg1.png" alt="BG" class="bg-img">
+                                            <div class="project-img">
+                                                <img src="@item.ImagePath" alt="Project">
                                             </div>
-                                            <a href="work-details.html" class="project-btn">
-                                                <img src="./assets/images/icon.svg" alt="Button">
-                                            </a>
+                                            <div class="d-flex align-items-center justify-content-between">
+                                                <div class="project-info">
+                                                    <p>@item.BirdEnglishName</p>
+                                                    <h1>@item.BirdMyanmarName</h1>
+                                                </div>
+                                                <a href="work-details.html" class="project-btn">
+                                                    <img src="./assets/images/icon.svg" alt="Button">
+                                                </a>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                            }
+                                }
+                            </div>
                         </div>
-                    </div>
-                }
+                    }
+                </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
+}
+else
+{
+    if (_birdDetail is not null)
+    {
+        <section class="about-area">
+            <div class="container">
+                <div class="d-flex about-me-wrap align-items-start gap-24">
+                    <div data-aos="zoom-in">
+                        <div class="about-image-box shadow-box">
+                            <img src="assets/images/bg1.png" alt="BG" class="bg-img">
+                            <div class="image-inner">
+                                <img src="@_birdDetail.ImagePath" alt="About Me">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="about-details" data-aos="zoom-in">
+                        <div class="about-details-inner shadow-box">
+                            <img src="assets/images/icon2.png" alt="Star">
+                            <h1>@_birdDetail.BirdMyanmarName (@_birdDetail.BirdEnglishName)</h1>
+                            <p>@_birdDetail.Description</p>
+                            <a href="javascript:void(0);" class="theme-btn mt-4" @onclick="Back">Back</a>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+    }
+}

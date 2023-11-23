@@ -6,6 +6,7 @@ namespace BlazorWasm.Birds.Pages
     public partial class BirdList
     {
         private List<BirdModel>? _birds;
+        private EnumBirdDetail _enumbirdsDetail = EnumBirdDetail.Disable;
 
         protected override async Task OnAfterRenderAsync(bool firstRender)
         {
@@ -20,6 +21,12 @@ namespace BlazorWasm.Birds.Pages
                 _birds = BirdService.GetBirds();
                 StateHasChanged();
             }
+        }
+
+        private void Onclick(BirdModel item)
+        {
+            _enumbirdsDetail = EnumBirdDetail.Enable;
+
         }
     }
 }
