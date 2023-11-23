@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Birds</title>
+    <base href="/" />
+
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/iconoir-icons/iconoir@main/css/iconoir.css">
+
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/aos.css">
+
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <link href="app.css" rel="stylesheet" />
+
+    <link href="manifest.json" rel="manifest" />
+
+    <link rel="apple-touch-icon" sizes="512x512" href="icon-512.png" />
+    <link rel="apple-touch-icon" sizes="192x192" href="icon-192.png" />
+</head>
+
+<body>
+    <div id="app">Loading...</div>
+
+    <div id="blazor-error-ui">
+        An unhandled error has occurred.
+        <a href="" class="reload">Reload</a>
+        <a class="dismiss">🗙</a>
+    </div>
+    <script src="_framework/blazor.webassembly.js"></script>
+    <script>navigator.serviceWorker.register('service-worker.js');</script>
+
+    <script src="assets/js/jquery-3.6.4.js"></script>
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/aos.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script>
+        window.loadJs = function(sourceUrl) {
+            if (sourceUrl.Length == 0) {
+                console.error("Invalid source URL");
+                return;
+            }
+
+            var tag = document.createElement('script');
+            tag.src = sourceUrl;
+            tag.type = "text/javascript";
+
+            tag.onload = function () {
+                console.log("Script loaded successfully");
+            }
+
+            tag.onerror = function () {
+                console.error("Failed to load script");
+            }
+
+            document.body.appendChild(tag);
+        }
+    </script>
+    <!-- <script src="assets/js/main.js"></script> -->
+</body>
+
+</html>

@@ -1,0 +1,72 @@
+﻿@inherits LayoutComponentBase
+@inject NavigationManager Nav
+
+<main class="main-homepage">
+
+    <!-- Header -->
+    <header class="header-area">
+        <div class="container">
+            <div class="gx-row d-flex align-items-center justify-content-between">
+                <a href="./index.html" class="logo">
+                    <img src="assets/images/logo.svg" alt="Logo">
+                </a>
+
+                <nav class="navbar">
+                    <ul class="menu">
+                        <li class="@ActiveMenu(EnumMenuType.Main)">
+                            <NavLink Href="/">Home</NavLink>
+                        </li>
+                        <li class="@ActiveMenu(EnumMenuType.Birds)">
+                            <NavLink Href="/birds">Birds</NavLink>
+                        </li>
+                    </ul>
+                </nav>
+
+                <a href="./contact.html" class="theme-btn">Let's talk</a>
+            </div>
+        </div>
+    </header>
+
+    @Body
+
+    <!-- Footer -->
+    <footer class="footer-area">
+        <div class="container">
+            <div class="footer-content text-center">
+                <a href="./index.html" class="logo">
+                    <img src="assets/images/logo.svg" alt="Logo">
+                </a>
+                <ul class="footer-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="works.html">Works</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+                <p class="copyright">
+                    &copy; All rights reserved by <span>WordPress River</span>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+</main>
+
+@code {
+    protected override void OnInitialized()
+    {
+        Console.WriteLine(Nav.Uri.Replace(Nav.BaseUri, ""));
+    }
+
+    private string ActiveMenu(EnumMenuType enumMenuType)
+    {
+        string url = Nav.Uri.Replace(Nav.BaseUri, "");
+        EnumMenuType menuType = Enum.Parse<EnumMenuType>(string.IsNullOrEmpty(url) ? "Main" : url, true);
+        return enumMenuType == menuType ? "active" : "";
+    }
+
+    public enum EnumMenuType
+    {
+        Main,
+        Birds
+    }
+}
