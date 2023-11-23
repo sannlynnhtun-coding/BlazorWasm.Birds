@@ -3,7 +3,7 @@ using Microsoft.JSInterop;
 
 namespace BlazorWasm.Birds.Pages
 {
-    public partial class BirdList
+    public partial class BirdList2
     {
         private List<BirdModel>? _birds;
 

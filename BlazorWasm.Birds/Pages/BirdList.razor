@@ -1,170 +1,91 @@
-﻿@page "/birds"
+﻿@page "/birds-old"
 
 <section class="projects-area">
     <div class="container">
-        <h1 class="section-heading" data-aos="fade-up"><img src="./assets/images/star-2.png" alt="Star"> All Projects <img src="./assets/images/star-2.png" alt="Star"></h1>
+        <h1 class="section-heading" data-aos="fade-up">
+            <img src="./assets/images/star-2.png" alt="Star">
+            Birds
+            <img src="./assets/images/star-2.png" alt="Star">
+        </h1>
         <div class="row">
             <div class="col-md-12">
-                <h1 class="section-heading" data-aos="fade-up"><img src="./assets/images/star-2.png" alt="Star"> All Projects <img src="./assets/images/star-2.png" alt="Star"></h1>
+                <h1 class="section-heading" data-aos="fade-up">
+                    <img src="./assets/images/star-2.png" alt="Star">
+                    Birds
+                    <img src="./assets/images/star-2.png" alt="Star">
+                </h1>
+                @if (_birds is not null)
+                {
+                    bool isFinish = false;
+                    int totalCount = _birds.Count;
+                    @for (int i = 0; i < totalCount; i++)
+                    {
+                        List<BirdModel> lstBirds = new List<BirdModel>();
+                        BirdModel item1;
+                        BirdModel item2;
+                        BirdModel item3;
+                        BirdModel item4;
+                        item1 = _birds[i];
 
-                <div class="d-flex align-items-start gap-24">
-                    <div data-aos="zoom-in" class="flex-1">
-                        <div class="project-item shadow-box">
-                            <a class="overlay-link" href="./work-details.html"></a>
-                            <img src="./assets/images/bg1.png" alt="BG" class="bg-img">
-                            <div class="project-img">
-                                <img src="./assets/images/project3.jpeg" alt="Project">
-                            </div>
-                            <div class="d-flex align-items-center justify-content-between">
-                                <div class="project-info">
-                                    <p>mOBILE DESIGNING</p>
-                                    <h1>Seven Studio</h1>
+                        int count = 0;
+
+                        lstBirds.Add(item1);
+                        if (i + 1 < totalCount)
+                        {
+                            item2 = _birds[i + 1];
+                            lstBirds.Add(item2);
+                            count++;
+                        }
+                        else
+                        {
+                            isFinish = true;
+                        }
+                        if (i + 2 < totalCount)
+                        {
+                            item3 = _birds[i + 2];
+                            lstBirds.Add(item3);
+                            count++;
+                        }
+                        else
+                        {
+                            isFinish = true;
+                        }
+                        if (i + 3 < totalCount)
+                        {
+                            item4 = _birds[i + 3];
+                            lstBirds.Add(item4);
+                            count++;
+                        }
+                        else
+                        {
+                            isFinish = true;
+                        }
+                        i += count;
+                        <div class="d-flex align-items-start gap-24">
+                            @foreach (var item in lstBirds)
+                            {
+                                <div data-aos="zoom-in" class="flex-1">
+                                    <div class="project-item shadow-box">
+                                        <a class="overlay-link" href="./work-details.html"></a>
+                                        <img src="./assets/images/bg1.png" alt="BG" class="bg-img">
+                                        <div class="project-img">
+                                            <img src="@item.ImagePath" style="height: 200px;" alt="Project">
+                                        </div>
+                                        <div class="d-flex align-items-center justify-content-between">
+                                            <div class="project-info">
+                                                <p>@item.BirdEnglishName</p>
+                                                <h1>@item.BirdMyanmarName</h1>
+                                            </div>
+                                            <a href="work-details.html" class="project-btn">
+                                                <img src="./assets/images/icon.svg" alt="Button">
+                                            </a>
+                                        </div>
+                                    </div>
                                 </div>
-                                <a href="work-details.html" class="project-btn">
-                                    <img src="./assets/images/icon.svg" alt="Button">
-                                </a>
-                            </div>
+                            }
                         </div>
-                    </div>
-
-                    <div data-aos="zoom-in" class="flex-1">
-                        <div class="project-item shadow-box">
-                            <a class="overlay-link" href="./work-details.html"></a>
-                            <img src="./assets/images/bg1.png" alt="BG" class="bg-img">
-                            <div class="project-img">
-                                <img src="./assets/images/project4.jpeg" alt="Project">
-                            </div>
-                            <div class="d-flex align-items-center justify-content-between">
-                                <div class="project-info">
-                                    <p>Branding</p>
-                                    <h1>Raven Studio</h1>
-                                </div>
-                                <a href="work-details.html" class="project-btn">
-                                    <img src="./assets/images/icon.svg" alt="Button">
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div data-aos="zoom-in" class="flex-1">
-                        <div class="project-item shadow-box">
-                            <a class="overlay-link" href="./work-details.html"></a>
-                            <img src="./assets/images/bg1.png" alt="BG" class="bg-img">
-                            <div class="project-img">
-                                <img src="./assets/images/project5.jpeg" alt="Project">
-                            </div>
-                            <div class="d-flex align-items-center justify-content-between">
-                                <div class="project-info">
-                                    <p>mOBILE DESIGNING</p>
-                                    <h1>Submarine</h1>
-                                </div>
-                                <a href="work-details.html" class="project-btn">
-                                    <img src="./assets/images/icon.svg" alt="Button">
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div data-aos="zoom-in" class="flex-1">
-                        <div class="project-item shadow-box">
-                            <a class="overlay-link" href="./work-details.html"></a>
-                            <img src="./assets/images/bg1.png" alt="BG" class="bg-img">
-                            <div class="project-img">
-                                <img src="./assets/images/project6.jpeg" alt="Project">
-                            </div>
-                            <div class="d-flex align-items-center justify-content-between">
-                                <div class="project-info">
-                                    <p>wEB DESIGNING</p>
-                                    <h1>Hydra Merc</h1>
-                                </div>
-                                <a href="work-details.html" class="project-btn">
-                                    <img src="./assets/images/icon.svg" alt="Button">
-                                </a>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-
-                <div class="d-flex align-items-start gap-24">
-                    <div data-aos="zoom-in" class="flex-1">
-                        <div class="project-item shadow-box">
-                            <a class="overlay-link" href="./work-details.html"></a>
-                            <img src="./assets/images/bg1.png" alt="BG" class="bg-img">
-                            <div class="project-img">
-                                <img src="./assets/images/project3.jpeg" alt="Project">
-                            </div>
-                            <div class="d-flex align-items-center justify-content-between">
-                                <div class="project-info">
-                                    <p>mOBILE DESIGNING</p>
-                                    <h1>Seven Studio</h1>
-                                </div>
-                                <a href="work-details.html" class="project-btn">
-                                    <img src="./assets/images/icon.svg" alt="Button">
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div data-aos="zoom-in" class="flex-1">
-                        <div class="project-item shadow-box">
-                            <a class="overlay-link" href="./work-details.html"></a>
-                            <img src="./assets/images/bg1.png" alt="BG" class="bg-img">
-                            <div class="project-img">
-                                <img src="./assets/images/project4.jpeg" alt="Project">
-                            </div>
-                            <div class="d-flex align-items-center justify-content-between">
-                                <div class="project-info">
-                                    <p>Branding</p>
-                                    <h1>Raven Studio</h1>
-                                </div>
-                                <a href="work-details.html" class="project-btn">
-                                    <img src="./assets/images/icon.svg" alt="Button">
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div data-aos="zoom-in" class="flex-1">
-                        <div class="project-item shadow-box">
-                            <a class="overlay-link" href="./work-details.html"></a>
-                            <img src="./assets/images/bg1.png" alt="BG" class="bg-img">
-                            <div class="project-img">
-                                <img src="./assets/images/project5.jpeg" alt="Project">
-                            </div>
-                            <div class="d-flex align-items-center justify-content-between">
-                                <div class="project-info">
-                                    <p>mOBILE DESIGNING</p>
-                                    <h1>Submarine</h1>
-                                </div>
-                                <a href="work-details.html" class="project-btn">
-                                    <img src="./assets/images/icon.svg" alt="Button">
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div data-aos="zoom-in" class="flex-1">
-                        <div class="project-item shadow-box">
-                            <a class="overlay-link" href="./work-details.html"></a>
-                            <img src="./assets/images/bg1.png" alt="BG" class="bg-img">
-                            <div class="project-img">
-                                <img src="./assets/images/project6.jpeg" alt="Project">
-                            </div>
-                            <div class="d-flex align-items-center justify-content-between">
-                                <div class="project-info">
-                                    <p>wEB DESIGNING</p>
-                                    <h1>Hydra Merc</h1>
-                                </div>
-                                <a href="work-details.html" class="project-btn">
-                                    <img src="./assets/images/icon.svg" alt="Button">
-                                </a>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-
+                    }
+                }
             </div>
         </div>
     </div>

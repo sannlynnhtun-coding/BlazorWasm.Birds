@@ -7,9 +7,9 @@
     <header class="header-area">
         <div class="container">
             <div class="gx-row d-flex align-items-center justify-content-between">
-                <a href="./index.html" class="logo">
-                    <img src="assets/images/logo.svg" alt="Logo">
-                </a>
+                <NavLink Href="/" Class="logo">
+                    <img src="logo.png" style="height: 50px;" alt="Logo">
+                </NavLink>
 
                 <nav class="navbar">
                     <ul class="menu">
@@ -22,7 +22,12 @@
                     </ul>
                 </nav>
 
-                <a href="./contact.html" class="theme-btn">Let's talk</a>
+                <NavLink Href="/birds" class="theme-btn">Let's Fly</NavLink>
+                <div class="show-menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
             </div>
         </div>
     </header>
@@ -34,13 +39,15 @@
         <div class="container">
             <div class="footer-content text-center">
                 <a href="./index.html" class="logo">
-                    <img src="assets/images/logo.svg" alt="Logo">
+                    <img src="logo.png" style="height: 50px;" alt="Logo">
                 </a>
                 <ul class="footer-menu">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="works.html">Works</a></li>
-                    <li><a href="contact.html">Contact</a></li>
+                    <li class="@ActiveMenu(EnumMenuType.Main)">
+                        <NavLink Href="/">Home</NavLink>
+                    </li>
+                    <li class="@ActiveMenu(EnumMenuType.Birds)">
+                        <NavLink Href="/birds">Birds</NavLink>
+                    </li>
                 </ul>
                 <p class="copyright">
                     &copy; All rights reserved by <span>WordPress River</span>

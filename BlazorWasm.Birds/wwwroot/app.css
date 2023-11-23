@@ -31,3 +31,62 @@
 .section-heading {
     font-size: 42px;
 }
+
+.projects-area .project-item .project-info p {
+    /*font-size: 12px;*/
+    /*  text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;*/
+}
+
+.projects-area .project-item .project-info h1 {
+    /*font-size: 12px;*/
+}
+
+.letter-spacing-5 {
+    letter-spacing: 5px;
+}
+
+/**/
+.row-list {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 4px;
+}
+
+/* Create four equal columns that sits next to each other */
+.column-list {
+    flex: 25%;
+    max-width: 25%;
+    padding: 0 13px;
+}
+
+    .column-list img {
+        margin-top: 8px;
+        vertical-align: middle;
+        width: 100%;
+    }
+
+/* Responsive layout - makes a two column-layout instead of four columns */
+@media screen and (max-width: 800px) {
+    .column-list {
+        flex: 50%;
+        max-width: 50%;
+    }
+}
+
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+    .column-list {
+        flex: 100%;
+        max-width: 100%;
+    }
+}
+
+.projects-area {
+    padding-top: 20px;
+}
+
+.marquee div {
+    animation: marquee 40s linear infinite;
+}

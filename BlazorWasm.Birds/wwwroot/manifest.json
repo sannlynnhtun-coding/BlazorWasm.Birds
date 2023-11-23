@@ -1,19 +1,19 @@
 {
-  "name": "BlazorWasm.Birds",
-  "short_name": "BlazorWasm.Birds",
+  "name": "Blazor WASM - Birds",
+  "short_name": "Blazor WASM - Birds",
   "start_url": "./",
   "display": "standalone",
   "background_color": "#ffffff",
-  "theme_color": "#03173d",
+  "theme_color": "#77CC7D",
   "prefer_related_applications": false,
   "icons": [
     {
-      "src": "icon-512.png",
+      "src": "logo.png",
       "type": "image/png",
       "sizes": "512x512"
     },
     {
-      "src": "icon-192.png",
+      "src": "logo.png",
       "type": "image/png",
       "sizes": "192x192"
     }
