@@ -7,6 +7,13 @@
     <title>Birds</title>
     <base href="/" />
 
+    <meta property="og:title" content="Blazor WASM - Birds">
+    <meta name="twitter:title" content="Blazor WASM - Birds">
+    <meta name="description" content="Blazor WASM - Birds">
+    <meta property="og:description" content="Blazor WASM - Birds">
+    <meta name="twitter:description" content="Blazor WASM - Birds">
+    <meta property="og:image" content="https://blazor-wasm-birds.netlify.app/logo.png">
+    <meta name="twitter:image" content="https://blazor-wasm-birds.netlify.app/logo.png">
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -46,7 +53,7 @@
     <script src="assets/js/aos.js"></script>
     <script src="assets/js/main.js"></script>
     <script>
-        window.loadJs = function(sourceUrl) {
+        window.loadJs = function (sourceUrl) {
             if (sourceUrl.Length == 0) {
                 console.error("Invalid source URL");
                 return;
